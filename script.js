@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const outputId = document.getElementById('output-id');
     const outputEn = document.getElementById('output-en');
 
-    //const dictionary = {
+    const dictionary = {
         "seekor kucing oranye": "an orange cat",
         "sedang bermain dengan bola benang": "playing with a ball of yarn",
         "dengan ekspresi ceria dan penasaran": "with a cheerful and curious expression",
