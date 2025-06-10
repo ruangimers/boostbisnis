@@ -97,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inisialisasi dengan contoh saat halaman dimuat
     // Mengisi form dengan contoh
-    document.getElementById('subjek').value = 'Seekor kucing oranye';
-    document.getElementById('aksi').value = 'sedang bermain dengan bola benang';
-    document.getElementById('ekspresi').value = 'dengan ekspresi ceria dan penasaran';
-    document.getElementById('tempat').value = 'di sebuah ruang tamu yang nyaman';
-    document.getElementById('suara').value = 'Suara dengkuran lembut dan musik lofi';
-    document.getElementById('detail').value = 'Fokus pada detail bulu kucing dan pantulan cahaya di matanya.';
-    document.getElementById('negatif').value = 'Buram, kualitas rendah, cacat digital, teks, watermark.';
+    //document.getElementById('subjek').value = 'Seekor kucing oranye';
+    //document.getElementById('aksi').value = 'sedang bermain dengan bola benang';
+    //document.getElementById('ekspresi').value = 'dengan ekspresi ceria dan penasaran';
+    //document.getElementById('tempat').value = 'di sebuah ruang tamu yang nyaman';
+    //document.getElementById('suara').value = 'Suara dengkuran lembut dan musik lofi';
+    //document.getElementById('detail').value = 'Fokus pada detail bulu kucing dan pantulan cahaya di matanya.';
+    //document.getElementById('negatif').value = 'Buram, kualitas rendah, cacat digital, teks, watermark.';
     
     // Generate prompt awal
     generatePrompts();
