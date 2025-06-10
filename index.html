@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veo3 Prompt Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Veo3 Prompt Generator</h1>
+            <p>Buat prompt video yang detail dan terstruktur untuk Veo3.</p>
+        </header>
+        <main>
+            <form id="prompt-form" class="form-grid">
+                <!-- Kolom 1: Input Utama -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="subjek">1. Subjek</label>
+                        <input type="text" id="subjek" placeholder="Contoh: Seekor kucing oranye">
+                    </div>
+                    <div class="form-group">
+                        <label for="aksi">2. Aksi</label>
+                        <input type="text" id="aksi" placeholder="Contoh: sedang bermain dengan bola benang">
+                    </div>
+                    <div class="form-group">
+                        <label for="ekspresi">3. Ekspresi</label>
+                        <input type="text" id="ekspresi" placeholder="Contoh: dengan ekspresi ceria dan penasaran">
+                    </div>
+                    <div class="form-group">
+                        <label for="tempat">4. Tempat</label>
+                        <input type="text" id="tempat" placeholder="Contoh: di sebuah ruang tamu yang nyaman">
+                    </div>
+                     <div class="form-group">
+                        <label for="suara">11. Suara atau Musik</label>
+                        <input type="text" id="suara" placeholder="Contoh: Suara dengkuran lembut dan musik lofi">
+                    </div>
+                    <div class="form-group">
+                        <label for="ucapan">12. Kalimat yang Diucapkan</label>
+                        <textarea id="ucapan" rows="3" placeholder="Contoh: 'Halo, teman kecil!' (Biarkan kosong jika tidak ada)"></textarea>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Opsi Pilihan -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="waktu">5. Waktu</label>
+                        <select id="waktu">
+                            <option value="pagi hari" data-en="morning">Pagi Hari (Morning)</option>
+                            <option value="siang hari" data-en="afternoon">Siang Hari (Afternoon)</option>
+                            <option value="sore hari" data-en="golden hour">Sore Hari (Golden Hour)</option>
+                            <option value="malam hari" data-en="night">Malam Hari (Night)</option>
+                            <option value="subuh" data-en="dawn">Subuh (Dawn)</option>
+                            <option value="senja" data-en="dusk">Senja (Dusk)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="kamera">6. Gerakan Kamera</label>
+                        <select id="kamera">
+                            <option value="Tangkapan Statis" data-en="Static Shot">Static Shot (Tangkapan Statis)</option>
+                            <option value="Geser Horizontal" data-en="Panning">Panning (Geser Horizontal)</option>
+                            <option value="Geser Vertikal" data-en="Tilting">Tilting (Geser Vertikal)</option>
+                            <option value="Gerakan Maju/Mundur" data-en="Dolly Shot">Dolly Shot (Gerakan Maju/Mundur)</option>
+                            <option value="Gerakan Samping" data-en="Trucking Shot">Trucking Shot (Gerakan Samping)</option>
+                            <option value="Gerakan Naik/Turun" data-en="Crane Shot">Crane Shot (Gerakan Naik/Turun)</option>
+                            <option value="Genggam" data-en="Handheld">Handheld (Genggam)</option>
+                            <option value="Perbesar" data-en="Zoom In">Zoom In (Perbesar)</option>
+                            <option value="Perkecil" data-en="Zoom Out">Zoom Out (Perkecil)</option>
+                            <option value="Efek Vertigo" data-en="Dolly Zoom">Dolly Zoom (Efek Vertigo)</option>
+                            <option value="Rotasi 3D" data-en="3D Rotation">3D Rotation (Rotasi 3D)</option>
+                            <option value="Ledakan/Gerak Cepat ke Atas" data-en="Boom">Boom (Ledakan/Gerak Cepat ke Atas)</option>
+                            <option value="Perubahan Kecepatan" data-en="Speed Ramp">Speed Ramp (Perubahan Kecepatan)</option>
+                            <option value="Selang Waktu" data-en="Time-lapse">Time-lapse (Selang Waktu)</option>
+                            <option value="Gerak Lambat" data-en="Slow Motion">Slow Motion (Gerak Lambat)</option>
+                            <option value="Gerakan Melingkar" data-en="Arc Shot">Arc Shot (Gerakan Melingkar)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pencahayaan">7. Pencahayaan</label>
+                        <select id="pencahayaan">
+                            <option value="Cahaya alami" data-en="Natural Light">Cahaya Alami (Natural Light)</option>
+                            <option value="Pencahayaan sinematik" data-en="Cinematic Lighting">Pencahayaan Sinematik (Cinematic Lighting)</option>
+                            <option value="Rembrandt lighting" data-en="Rembrandt lighting">Rembrandt Lighting</option>
+                            <option value="Cahaya lembut" data-en="Soft Light">Cahaya Lembut (Soft Light)</option>
+                            <option value="Cahaya keras" data-en="Hard Light">Cahaya Keras (Hard Light)</option>
+                            <option value="Lampu neon" data-en="Neon Lights">Lampu Neon (Neon Lights)</option>
+                            <option value="Siluet" data-en="Silhouette">Siluet (Silhouette)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gaya">8. Gaya Video</label>
+                        <select id="gaya">
+                            <option value="realistis" data-en="realistic">Realistis (Realistic)</option>
+                            <option value="sinematik" data-en="cinematic">Sinematik (Cinematic)</option>
+                            <option value="gaya anime" data-en="anime style">Gaya Anime (Anime Style)</option>
+                            <option value="stop-motion" data-en="stop-motion">Stop-motion</option>
+                            <option value="dokumenter" data-en="documentary">Dokumenter (Documentary)</option>
+                            <option value="CGI profesional" data-en="professional CGI">CGI Profesional (Professional CGI)</option>
+                            <option value="gaya vintage" data-en="vintage style">Gaya Vintage (Vintage Style)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Kolom 3: Detail Tambahan -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="suasana">9. Suasana Video</label>
+                        <select id="suasana">
+                            <option value="ceria dan menyenangkan" data-en="cheerful and fun">Ceria dan Menyenangkan (Cheerful and Fun)</option>
+                            <option value="dramatis dan tegang" data-en="dramatic and tense">Dramatis dan Tegang (Dramatic and Tense)</option>
+                            <option value="tenang dan damai" data-en="calm and peaceful">Tenang dan Damai (Calm and Peaceful)</option>
+                            <option value="misterius" data-en="mysterious">Misterius (Mysterious)</option>
+                            <option value="nostalgia" data-en="nostalgic">Nostalgia</option>
+                            <option value="epik dan megah" data-en="epic and grandiose">Epik dan Megah (Epic and Grandiose)</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="durasi">10. Durasi Video</label>
+                        <select id="durasi">
+                            <option value="sangat pendek (3-5 detik)" data-en="very short (3-5 seconds)">Sangat Pendek (3-5 detik)</option>
+                            <option value="pendek (5-10 detik)" data-en="short (5-10 seconds)">Pendek (5-10 detik)</option>
+                            <option value="medium (10-20 detik)" data-en="medium (10-20 seconds)">Medium (10-20 detik)</option>
+                            <option value="panjang (20-30 detik)" data-en="long (20-30 seconds)">Panjang (20-30 detik)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="detail">13. Detail Tambahan</label>
+                        <textarea id="detail" rows="3" placeholder="Contoh: Fokus pada detail bulu kucing dan pantulan cahaya di matanya."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="negatif">14. Prompt Negatif</label>
+                        <textarea id="negatif" rows="3" placeholder="Contoh: Buram, kualitas rendah, cacat digital, teks, watermark."></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="button-container">
+                <button type="button" id="generate-btn">Buat Prompt</button>
+            </div>
+            <div class="output-container">
+                <div class="output-column">
+                    <h2>Prompt Bahasa Indonesia (Bisa Diedit)</h2>
+                    <textarea id="output-id" rows="10" placeholder="Hasil prompt dalam Bahasa Indonesia akan muncul di sini..."></textarea>
+                </div>
+                <div class="output-column">
+                    <h2>Prompt Bahasa Inggris (Final)</h2>
+                    <textarea id="output-en" rows="10" placeholder="The final English prompt will appear here..." readonly></textarea>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Dibuat untuk deployment di GitHub Pages.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
